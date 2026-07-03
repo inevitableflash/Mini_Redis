@@ -8,6 +8,8 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
+#include "kvstore.h"
+
 
 #define MAX_MESSAGE_LEN 1024
 
@@ -23,6 +25,7 @@ class RedisServer {
         struct sockaddr_in address;
         int addrlen;
         bool running;
+        KVStore store;   
 
         void handleClient(int client_socket);
 };
