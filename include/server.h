@@ -27,7 +27,7 @@ class RedisServer {
         bool running;
         KVStore store;   
 
-        void handleClient(int client_socket);
+        void handleClient(int client_socket, bool &keepGoing);
 };
 
 #endif
